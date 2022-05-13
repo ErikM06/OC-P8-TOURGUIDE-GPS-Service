@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.UUID;
 
 @Service
@@ -21,7 +22,8 @@ public class GpsUtilService {
      * @return a VisitedLocation
      */
     public VisitedLocation getUserLastVisitedLocation(UUID userId) {
-        logger.debug("getUserLocationGpsUtil");
+        Locale.setDefault(Locale.US);
+        logger.info("getUserLocationGpsUtil");
         return gpsUtil.getUserLocation(userId);
     }
 

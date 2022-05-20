@@ -28,6 +28,8 @@ public class GpsUtilController {
      *
      * @param userId as a String from the request
      * @return a VisitedLocation
+     * a random longitude and latitude representing the user latest visited location
+     * port = 8090
      * @throws UserUnknownException
      */
     @GetMapping("/getUserLastVisitedLocation")
@@ -42,6 +44,11 @@ public class GpsUtilController {
         return new ResponseEntity<>(trackerVisitedLocation, HttpStatus.OK);
     }
 
+    /**
+     *
+     * @return the list of all Attractions and a Http status = ok
+     * port = 8090
+     */
     @GetMapping("/getAllAttraction")
     public ResponseEntity<List<Attraction>> getAllAttractionFromService (){
         logger.debug("in GpsUtilController getAllAttractionFromService");
